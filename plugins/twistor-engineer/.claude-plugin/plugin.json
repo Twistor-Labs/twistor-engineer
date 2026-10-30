@@ -1,0 +1,24 @@
+{
+  "name": "twistor-engineer",
+  "displayName": "The Twistor's Engineer",
+  "version": "1.0.0",
+  "description": "Nine engineering-practice skills built from verified posts by Anthropic, Cloudflare, Netflix, Meta, Uber, Discord, Airbnb, LinkedIn and Zepto, plus a diff reviewer and a postmortem writer.",
+  "author": {
+    "name": "Twistor Labs",
+    "email": "hello@twistorlabs.com",
+    "url": "https://twistorlabs.com"
+  },
+  "homepage": "https://engineer.twistorlabs.com",
+  "repository": "https://github.com/Twistor-Labs/twistor-engineer",
+  "license": "MIT",
+  "keywords": [
+    "engineering",
+    "agents",
+    "evals",
+    "reliability",
+    "system-design",
+    "performance",
+    "security",
+    "frontend"
+  ]
+}

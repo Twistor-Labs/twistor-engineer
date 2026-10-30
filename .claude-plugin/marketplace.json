@@ -1,0 +1,16 @@
+{
+  "name": "twistor-engineer",
+  "owner": {
+    "name": "Twistor Labs",
+    "email": "hello@twistorlabs.com"
+  },
+  "description": "Engineering-practice skills from Twistor Labs, sourced from verified engineering blog posts.",
+  "plugins": [
+    {
+      "name": "twistor-engineer",
+      "source": "./plugins/twistor-engineer",
+      "description": "Nine engineering-practice skills built from verified posts by Anthropic, Cloudflare, Netflix, Meta, Uber, Discord, Airbnb, LinkedIn and Zepto, plus a diff reviewer and a postmortem writer.",
+      "category": "development"
+    }
+  ]
+}
