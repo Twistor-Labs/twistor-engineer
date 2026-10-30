@@ -65,7 +65,7 @@ Keep it in this order and update it in place.
 
 1. **Status line.** Severity, user impact in SLO terms (which SLI, how far over budget), start time in ISO UTC.
 2. **Mitigation.** Current ladder rung, what was done, and the metric showing whether it held.
-3. **Recovery rule.** A number, a rate and a duration that mean "recovered", for example checkout errors under the pre-deploy baseline for 15 minutes (rule 14). If the baseline is unknown, say how to read it from the last day before the deploy.
+3. **Recovery rule.** A number, a rate and a duration that mean "recovered", for example checkout errors under the pre-deploy baseline for 15 minutes, outside known deploy windows (rule 14). If the baseline is unknown, say how to read it from the last day before the deploy.
 4. **Timeline.** ISO UTC, one line per event, change events first.
 5. **Leading hypotheses.** Ranked, each with the one observation that would confirm or kill it.
 6. **Next action.** One owner, one action, next check time.

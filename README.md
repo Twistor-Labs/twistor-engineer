@@ -1,28 +1,69 @@
-# The Twistor's Engineer
+<p align="center"><img src="assets/banner.png" alt="The Twistor's Engineer: nine engineering-practice skills for any coding agent, 135 sourced rules" width="100%"></p>
 
-Nine engineering-practice skills for Claude Code, plus a diff reviewer and a postmortem writer.
-Each skill is a short list of rules in the form "instead of X, do Y", and every figure in a rule
-links to the public engineering post it came from: Anthropic, Cloudflare, Netflix, Meta, Uber,
-Discord, Airbnb, LinkedIn, Zepto and others.
+<p align="center">
+  <a href="https://engineer.twistorlabs.com">Site</a> ·
+  <a href="#install">Install</a> ·
+  <a href="#skills">Skills</a> ·
+  <a href="https://github.com/Twistor-Labs/twistor-engineer/releases/latest">Releases</a> ·
+  <a href="LICENSE">MIT</a>
+</p>
 
-The skills load on their own when your question matches. If you run many plugins at once and a
-skill doesn't load, call it by name, for example `/twistor-engineer:system-design-scaling`.
+Engineering-practice skills for coding agents. Each skill is a short list of rules in the form
+"instead of X, do Y", and every figure in a rule links to the public engineering post it came
+from: Anthropic, Cloudflare, Netflix, Meta, Uber, Discord, Airbnb, LinkedIn, Zepto and others.
 
-Site: https://engineer.twistorlabs.com
+They use the open Agent Skills format (`SKILL.md`), so they work in Claude Code, Codex, Cursor,
+GitHub Copilot, Gemini CLI, OpenCode and every other agent that reads it.
+
+<p align="center"><img src="assets/rules.gif" alt="Filtering the 135 rules by skill on engineer.twistorlabs.com" width="85%"></p>
 
 ## Install
 
-```
-/plugin marketplace add Twistor-Labs/twistor-engineer
-/plugin install twistor-engineer@twistor-engineer
-```
-
-Optional: live search over the Cloudflare blog through its public MCP server. We don't ship this
-inside the plugin, because a plugin's MCP servers start as soon as it is enabled.
+**Any agent, one command.** Detects the agents on your machine and installs into each:
 
 ```
-claude mcp add --transport http cloudflare-blog https://blog.mcp.cloudflare.com/mcp
+npx skills add Twistor-Labs/twistor-engineer
 ```
+
+Add `-a <agent>` to pick one (`claude-code`, `codex`, `cursor`, `github-copilot`, `gemini-cli`,
+`opencode`, `windsurf`, `cline`, `goose`, `amp`, `droid`, `roo`, `kiro`, `zed`), `-g` for your
+user folder instead of the project, or `--skill <name>` for a single skill.
+
+| Where you work | How |
+|---|---|
+| **Claude Code** (CLI, desktop, IDE) | `/plugin marketplace add Twistor-Labs/twistor-engineer` then `/plugin install twistor-engineer@twistor-engineer`. Includes the `engineer-reviewer` subagent. |
+| **claude.ai and Claude desktop app** | Download a skill zip from [Releases](https://github.com/Twistor-Labs/twistor-engineer/releases/latest), then Customize > Skills > upload. One zip per skill. |
+| **Codex** (CLI, IDE, app) | `codex plugin marketplace add Twistor-Labs/twistor-engineer`, or `npx skills add Twistor-Labs/twistor-engineer -a codex` |
+| **GitHub Copilot** (CLI, VS Code) | `npx skills add Twistor-Labs/twistor-engineer -a github-copilot` |
+| **Gemini CLI** | `npx skills add Twistor-Labs/twistor-engineer -a gemini-cli` |
+| **Cursor** | `npx skills add Twistor-Labs/twistor-engineer -a cursor` |
+| **OpenCode** | `npx skills add Twistor-Labs/twistor-engineer -a opencode` |
+| **Anything else** | Copy `plugins/twistor-engineer/skills/*` into your agent's skills folder (`~/.agents/skills/` is read by most). |
+
+<p align="center"><img src="assets/harness.png" alt="Agents that read SKILL.md: Claude Code, Codex, OpenCode tested; Copilot, Gemini CLI, Cursor, Windsurf, Cline, Goose, Amp, Droid, Kiro, Roo, Junie, Zed" width="85%"></p>
+
+We test every release in Claude Code, Codex and OpenCode. The others read the same `SKILL.md`
+format per their own docs.
+
+## Try it
+
+Skills load on their own when your question matches. Ask your agent something real:
+
+- "Our p99 doubled after moving the Go service to Kubernetes with a 2 CPU limit. Why?"
+- "We push a generated rate-limit config to 40 regions in 30 seconds. What should change first?"
+- "Should our support bot be one agent with tools or a planner plus subagents?"
+
+Then try the two workflow skills on your own repo:
+
+- **engineer-review**: "review my branch with engineer-review". One line per finding, tagged
+  bug, risk, nit or question, each citing the rule it breaks.
+- **engineer-postmortem**: paste incident notes and ask for a postmortem. You get a UTC timeline,
+  root causes, the closest public outage and action items with owners and revisit triggers.
+
+<p align="center"><img src="assets/review.png" alt="engineer-review output on this repo: severity-tagged findings with skill and rule numbers" width="85%"></p>
+
+If you run many plugins and a skill doesn't load, call it by name, for example
+`/twistor-engineer:system-design-scaling` in Claude Code or `$system-design-scaling` in Codex.
 
 ## Skills
 
@@ -37,17 +78,18 @@ claude mcp add --transport http cloudflare-blog https://blog.mcp.cloudflare.com/
 | `dev-productivity-ai-coding` | Agentic coding workflow, review at agent volume, CI cost, LLM-driven migrations |
 | `security-engineering` | Sandboxing agents, credentials outside the box, scoped tools, approval tiers |
 | `frontend-mobile-engineering` | Performance budgets, safe mobile releases and OTA, server-driven UI, startup-scale lessons |
+| `engineer-review` | Diff review against the checklists above |
+| `engineer-postmortem` | Incident notes to a blameless postmortem |
 
-Each skill has the same shape: when to use it, 15 rules, the shape of a good answer, red flags,
-how to verify, and a `references/` folder with case studies, a checklist and `sources.md`.
+Each practice skill has the same shape: when to use it, 15 rules, the shape of a good answer, red
+flags, how to verify, and a `references/` folder with case studies, a checklist and `sources.md`.
 
-## Commands and agent
+## Does it help?
 
-- `/engineer-review [range]` picks the skills your diff touches and hands the diff to the
-  `engineer-reviewer` agent. Findings come back one per line:
-  `path:line: bug|risk|nit|q: problem. fix. (skill #rule)`, then a totals line, or `No issues.`
-- `/engineer-postmortem [notes]` turns incident notes into a blameless postmortem with an ISO UTC
-  timeline and action items that each carry an owner and a revisit trigger.
+We asked 18 realistic questions, two per skill, once with the skill and once without, and graded
+every answer against 73 written criteria. With the skill: 97.1%. Without: 76.4%. The skill won 13
+questions, tied 5 and lost none, at about 6% more tokens per answer. Most of the gap is sourced
+specifics, such as a named outage's cause or a company's measured figure.
 
 ## Sources
 

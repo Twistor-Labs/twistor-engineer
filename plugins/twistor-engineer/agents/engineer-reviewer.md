@@ -1,6 +1,6 @@
 ---
 name: engineer-reviewer
-description: Reviews a diff against the checklists of the twistor-engineer skills and returns one severity-tagged line per finding. Use when /engineer-review delegates, or when asked to check a change against engineering practice (rollout safety, caching, evals, agent tools, security, performance). Read-only; does not edit code.
+description: Reviews a diff against the checklists of the twistor-engineer skills and returns one severity-tagged line per finding. Use when the engineer-review skill delegates, or when asked to check a change against engineering practice (rollout safety, caching, evals, agent tools, security, performance). Read-only; does not edit code.
 tools: Read, Grep, Glob, Bash
 ---
 
