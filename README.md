@@ -87,7 +87,7 @@ flags, how to verify, and a `references/` folder with case studies, a checklist 
 ## Does it help?
 
 We asked 18 realistic questions, two per skill, once with the skill and once without, and graded
-every answer against 73 written criteria. With the skill: 97.1%. Without: 76.4%. The skill won 13
+every answer against 73 written criteria. With the skill, answers met 71 of them; without, 56. The skill won 13
 questions, tied 5 and lost none, at about 6% more tokens per answer. Most of the gap is sourced
 specifics, such as a named outage's cause or a company's measured figure.
 
