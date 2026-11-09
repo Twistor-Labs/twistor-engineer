@@ -4,8 +4,8 @@ description: 'Review a diff, branch or PR against the twistor-engineer practice 
 license: MIT
 metadata:
   plugin: twistor-engineer
-  version: 1.1.0
-  summary: 'Diff review against the nine skill checklists, one finding per line.'
+  version: 1.2.0
+  summary: 'Diff review against the ten skill checklists, one finding per line.'
 ---
 
 # Engineer review
@@ -27,15 +27,19 @@ Match file paths and content:
 |---|---|
 | prompts, tool schemas, agent loops, MCP config | ai-agent-engineering, llm-evals |
 | eval sets, graders, judge prompts | llm-evals |
-| schemas, queries, caches, queues, partition keys | system-design-scaling |
+| data models, queries, caches, queues, partition keys | system-design-scaling |
 | config, flags, rollout, retries, timeouts, alerts | reliability-incident-response |
 | hot loops, allocations, GC, concurrency, inference serving | performance-engineering |
 | pipelines, features, experiments, training jobs | data-ml-platforms |
-| CI, build, codemods, migrations, repo tooling | dev-productivity-ai-coding |
+| CI, build, codemods, repo tooling | dev-productivity-ai-coding |
+| SQL migrations, schema files, backfills, ORM migration dirs, pool config | database-engineering |
 | auth, secrets, permissions, sandboxing, untrusted input | security-engineering |
 | UI, bundles, mobile releases, OTA, client caching | frontend-mobile-engineering |
 
 Say which you picked and why in one line.
+
+Whole-repo security audit rather than one diff: use `engineer-security-audit`. A design doc
+before code: use `engineer-design-review`.
 
 ## 3. Walk the checklists
 

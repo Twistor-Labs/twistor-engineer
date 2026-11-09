@@ -1,10 +1,10 @@
 ---
 name: security-engineering
-description: 'Use when securing an AI agent, coding agent, MCP server or LLM app, or reviewing app security before ship. Triggers: "prompt injection", "sandbox the agent", "too many permission prompts", "auto-approve tool calls", "where do API keys live", "MCP gateway", "exfiltration", "egress allowlist", "least privilege for agents", "human approval for risky actions", "triage scanner findings", "config push took prod down", "post-quantum TLS". Nouns: sandbox, egress proxy, service identity, tool scopes, guardrails, purpose limitation. Gives sourced instead-of rules, an agent threat model, a controls-by-layer answer shape and a pre-ship checklist. Not for OWASP basics or input validation (use agent-skills security-and-hardening), agent tool design (use ai-agent-engineering), or outage response (use reliability-incident-response).'
+description: 'Use when securing an AI agent, coding agent, MCP server or LLM app, or reviewing app security before ship. Triggers: "prompt injection", "sandbox the agent", "too many permission prompts", "auto-approve tool calls", "where do API keys live", "MCP gateway", "exfiltration", "egress allowlist", "least privilege for agents", "human approval for risky actions", "triage LLM security findings", "config push took prod down", "post-quantum TLS". Nouns: sandbox, egress proxy, service identity, tool scopes, guardrails, purpose limitation. Gives sourced instead-of rules, an agent threat model, a controls-by-layer answer shape and a pre-ship checklist. Not for OWASP basics or input validation (use agent-skills security-and-hardening), a whole-repo vulnerability audit (use engineer-security-audit), agent tool design (use ai-agent-engineering), or outage response (use reliability-incident-response).'
 license: MIT
 metadata:
   plugin: twistor-engineer
-  version: 1.0.0
+  version: 1.2.0
   summary: 'Contain agents with sandboxes, outside-the-box credentials, scoped tools and tiered approval, plus sourced app-security lessons.'
 ---
 
@@ -19,6 +19,7 @@ The model is not the security boundary. The environment is. Put hard limits in t
 - Not: OWASP Top 10 basics, auth flows, headers, CORS, input validation (see agent-skills security-and-hardening).
 - Not: tool design, context and orchestration (see ai-agent-engineering).
 - Not: running a live incident or writing a postmortem (see reliability-incident-response).
+- Not: auditing a whole repo for vulnerabilities or running scanners (see engineer-security-audit).
 
 ## Rules
 

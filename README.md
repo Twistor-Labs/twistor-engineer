@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/banner.png" alt="The Twistor's Engineer: nine engineering-practice skills for any coding agent, 135 sourced rules" width="100%"></p>
+<p align="center"><img src="assets/banner.png" alt="The Twistor's Engineer: ten engineering-practice skills for any coding agent, 150 sourced rules" width="100%"></p>
 
 <p align="center">
   <a href="https://engineer.twistorlabs.com">Site</a> ·
@@ -15,7 +15,7 @@ from: Anthropic, Cloudflare, Netflix, Meta, Uber, Discord, Airbnb, LinkedIn, Zep
 They use the open Agent Skills format (`SKILL.md`), so they work in Claude Code, Codex, Cursor,
 GitHub Copilot, Gemini CLI, OpenCode and every other agent that reads it.
 
-<p align="center"><img src="assets/rules.gif" alt="Filtering the 135 rules by skill on engineer.twistorlabs.com" width="85%"></p>
+<p align="center"><img src="assets/rules.png" alt="The 150 rules on engineer.twistorlabs.com, filtered to database-engineering" width="85%"></p>
 
 ## Install
 
@@ -53,12 +53,16 @@ Skills load on their own when your question matches. Ask your agent something re
 - "We push a generated rate-limit config to 40 regions in 30 seconds. What should change first?"
 - "Should our support bot be one agent with tools or a planner plus subagents?"
 
-Then try the two workflow skills on your own repo:
+Then try the workflow skills on your own repo:
 
 - **engineer-review**: "review my branch with engineer-review". One line per finding, tagged
   bug, risk, nit or question, each citing the rule it breaks.
 - **engineer-postmortem**: paste incident notes and ask for a postmortem. You get a UTC timeline,
   root causes, the closest public outage and action items with owners and revisit triggers.
+- **engineer-design-review**: point it at a design doc or RFC before you build. Findings name the
+  doc section and the rule, then the open questions that block a go/no-go.
+- **engineer-security-audit**: "audit this repo for security". Every candidate goes to a fresh
+  verifier that tries to disprove it, so you get confirmed findings, not scanner noise.
 
 <p align="center"><img src="assets/review.png" alt="engineer-review output on this repo: severity-tagged findings with skill and rule numbers" width="85%"></p>
 
@@ -78,7 +82,10 @@ If you run many plugins and a skill doesn't load, call it by name, for example
 | `dev-productivity-ai-coding` | Agentic coding workflow, review at agent volume, CI cost, LLM-driven migrations |
 | `security-engineering` | Sandboxing agents, credentials outside the box, scoped tools, approval tiers |
 | `frontend-mobile-engineering` | Performance budgets, safe mobile releases and OTA, server-driven UI, startup-scale lessons |
+| `database-engineering` | Online schema changes, lock and statement timeouts, backfills, expand and contract, cutovers, connection pools, restore drills |
 | `engineer-review` | Diff review against the checklists above |
+| `engineer-design-review` | Design doc or RFC review before code exists |
+| `engineer-security-audit` | Whole-repo security audit with adversarial verification and a free-scanner map |
 | `engineer-postmortem` | Incident notes to a blameless postmortem |
 
 Each practice skill has the same shape: when to use it, 15 rules, the shape of a good answer, red
@@ -90,6 +97,11 @@ We asked 18 realistic questions, two per skill, once with the skill and once wit
 every answer against 73 written criteria. With the skill, answers met 71 of them; without, 56. The skill won 13
 questions, tied 5 and lost none, at about 6% more tokens per answer. Most of the gap is sourced
 specifics, such as a named outage's cause or a company's measured figure.
+
+The three v1.2 skills were run the same way in November 2026 on 4 more questions and 28 criteria:
+28 with the skill, 19 without. database-engineering 12 vs 8, engineer-design-review 8 vs 3,
+engineer-security-audit 8 vs 8. The audit fixture is too easy for now: the plain model found every
+planted bug too.
 
 ## Sources
 

@@ -9,7 +9,7 @@
     {
       "name": "twistor-engineer",
       "source": "./plugins/twistor-engineer",
-      "description": "Nine engineering-practice skills built from verified posts by Anthropic, Cloudflare, Netflix, Meta, Uber, Discord, Airbnb, LinkedIn and Zepto, plus a diff reviewer and a postmortem writer.",
+      "description": "Ten engineering-practice skills (150 rules) built from verified posts by Anthropic, Cloudflare, Netflix, Meta, Uber, Discord, Airbnb, LinkedIn, Zepto, GitHub, Stripe and Notion, plus a diff reviewer, a design reviewer, a security auditor and a postmortem writer.",
       "category": "development"
     }
   ]
