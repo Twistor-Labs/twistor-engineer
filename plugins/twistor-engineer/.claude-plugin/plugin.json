@@ -19,6 +19,16 @@
     "system-design",
     "performance",
     "security",
-    "frontend"
+    "frontend",
+    "database",
+    "llm-evals",
+    "code-review",
+    "design-review",
+    "security-audit",
+    "postmortem",
+    "agent-skills",
+    "claude-code",
+    "codex",
+    "cursor"
   ]
 }

@@ -1,0 +1,26 @@
+# The Twistor's Engineer
+
+> Engineering rules your coding agent can cite. 14 open Agent Skills (SKILL.md): 10 practice skills (AI agents, LLM evals, system design and scaling, reliability and incident response, performance, data and ML platforms, AI-assisted coding, security, frontend and mobile, databases) with 15 rules each, 150 in total, written as "instead of X, do Y" with every figure linked to the public engineering post it came from; plus engineer-review, engineer-design-review, engineer-security-audit and engineer-postmortem. Published by Twistor Labs Private Limited. MIT license.
+
+Install in any agent that reads SKILL.md (Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, OpenCode):
+npx skills add Twistor-Labs/twistor-engineer
+
+Install as a Claude Code plugin:
+/plugin marketplace add Twistor-Labs/twistor-engineer
+/plugin install twistor-engineer@twistor-engineer
+
+## Files
+
+- [README.md](README.md): install per agent, usage, the skill list and benchmark results
+- [AGENTS.md](AGENTS.md): skill layout for agents
+- [Skills](plugins/twistor-engineer/skills/): one folder per skill, each with SKILL.md and references/ (case studies, checklist, sources.md)
+
+## Links
+
+- Site, with all 150 rules: https://engineer.twistorlabs.com
+- Rules as plain text: https://engineer.twistorlabs.com/llms.txt
+- Source: https://github.com/Twistor-Labs/twistor-engineer
+- Company: https://twistorlabs.com
+- Support: hello@twistorlabs.com
+
+Company names identify the public posts cited. Twistor Labs is not affiliated with or endorsed by any of them.

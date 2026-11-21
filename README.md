@@ -3,17 +3,26 @@
 <p align="center">
   <a href="https://engineer.twistorlabs.com">Site</a> ·
   <a href="#install">Install</a> ·
-  <a href="#skills">Skills</a> ·
+  <a href="#which-skills-are-included">Skills</a> ·
   <a href="https://github.com/Twistor-Labs/twistor-engineer/releases/latest">Releases</a> ·
   <a href="LICENSE">MIT</a>
 </p>
 
-Engineering-practice skills for coding agents. Each skill is a short list of rules in the form
-"instead of X, do Y", and every figure in a rule links to the public engineering post it came
-from: Anthropic, Cloudflare, Netflix, Meta, Uber, Discord, Airbnb, LinkedIn, Zepto and others.
+The Twistor's Engineer is 14 free, open Agent Skills that give your coding agent engineering rules
+it can cite. It is for developers who want their agent's advice on agents, evals, system design,
+reliability, performance, data, security, frontend and databases to come with a source, plus
+skills for diff review, design review, security audits and postmortems. Install it in any agent
+with `npx skills add Twistor-Labs/twistor-engineer`.
+
+Each practice skill is a short list of rules in the form "instead of X, do Y", and every figure
+in a rule links to the public engineering post it came from: Anthropic, Cloudflare, Netflix, Meta,
+Uber, Discord, Airbnb, LinkedIn, Zepto and others.
 
 They use the open Agent Skills format (`SKILL.md`), so they work in Claude Code, Codex, Cursor,
 GitHub Copilot, Gemini CLI, OpenCode and every other agent that reads it.
+
+Site: [engineer.twistorlabs.com](https://engineer.twistorlabs.com). From
+[Twistor Labs](https://twistorlabs.com).
 
 <p align="center"><img src="assets/rules.png" alt="The 150 rules on engineer.twistorlabs.com, filtered to database-engineering" width="85%"></p>
 
@@ -45,7 +54,7 @@ user folder instead of the project, or `--skill <name>` for a single skill.
 We test every release in Claude Code, Codex and OpenCode. The others read the same `SKILL.md`
 format per their own docs.
 
-## Try it
+## How to use it
 
 Skills load on their own when your question matches. Ask your agent something real:
 
@@ -69,7 +78,7 @@ Then try the workflow skills on your own repo:
 If you run many plugins and a skill doesn't load, call it by name, for example
 `/twistor-engineer:system-design-scaling` in Claude Code or `$system-design-scaling` in Codex.
 
-## Skills
+## Which skills are included
 
 | Skill | Use it for |
 |---|---|
@@ -103,7 +112,7 @@ The three v1.2 skills were run the same way in November 2026 on 4 more questions
 engineer-security-audit 8 vs 8. The audit fixture is too easy for now: the plain model found every
 planted bug too.
 
-## Sources
+## Where the rules come from
 
 Every rule cites its sources by id (`[S3]`). Each id points to a line in that skill's
 `references/sources.md` with the URL, the date and a status: VERIFIED, CORRECTED (the number most
